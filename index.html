@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please take a moment to complete this survey. Your feedback is important to us.</p>
+
+    <form id="survey-form">
+      <!-- Error Message -->
+      <div id="error-message" style="display: none;">Please complete all required fields.</div>
+
+      <!-- Name -->
+      <label for="name" id="name-label">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" aria-required="true" required>
+
+      <!-- Email -->
+      <label for="email" id="email-label">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" aria-required="true" required>
+
+      <!-- Age -->
+      <label for="number" id="number-label">Age:</label>
+      <p id="age-info" class="info-text">Age must be between 18 and 100.</p>
+      <input type="number" id="number" name="age" placeholder="Enter your age" min="18" max="100" aria-describedby="age-info" aria-required="true" required>
+
+      <!-- Dropdown -->
+      <label for="dropdown">Select your favorite programming language:</label>
+      <select id="dropdown" name="language">
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="ruby">Ruby</option>
+      </select>
+
+      <!-- Developer Type -->
+      <fieldset>
+        <legend>What type of developer are you?</legend>
+        <label for="frontend">
+          <input type="radio" id="frontend" name="developer-type" value="frontend" required> Frontend Developer
+        </label>
+        <label for="backend">
+          <input type="radio" id="backend" name="developer-type" value="backend"> Backend Developer
+        </label>
+        <label for="fullstack">
+          <input type="radio" id="fullstack" name="developer-type" value="fullstack"> Fullstack Developer
+        </label>
+      </fieldset>
+
+      <!-- Technologies -->
+      <fieldset>
+        <legend>Which technologies are you familiar with?</legend>
+        <label for="html">
+          <input type="checkbox" id="html" name="technologies" value="html"> HTML
+        </label>
+        <label for="css">
+          <input type="checkbox" id="css" name="technologies" value="css"> CSS
+        </label>
+        <label for="javascript">
+          <input type="checkbox" id="javascript" name="technologies" value="javascript"> JavaScript
+        </label>
+        <label for="nodejs">
+          <input type="checkbox" id="nodejs" name="technologies" value="nodejs"> Node.js
+        </label>
+      </fieldset>
+
+      <!-- Comments -->
+      <label for="comments">Additional Comments:</label>
+      <textarea id="comments" name="comments" placeholder="Enter any additional feedback" rows="4"></textarea>
+
+      <!-- Submit -->
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
